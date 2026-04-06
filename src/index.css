@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "short";
+  src: url("/ClashDisplay-Variable.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+@layer utilities {
+  .font-short {
+    font-family: "short", sans-serif;
+  }
+}
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
