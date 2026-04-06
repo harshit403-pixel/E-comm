@@ -134,7 +134,6 @@ const ProductDetails = () => {
 
           </div>
 
-          {/* NAV */}
           <div className="flex gap-3 mt-6">
             <NavLink
               to={`/products/${Number(id) - 1}`}
@@ -154,14 +153,14 @@ const ProductDetails = () => {
         </div>
       </div>
 
-      {/* RELATED PRODUCTS (simple version) */}
+    
       <h2 className="text-2xl font-bold mb-6">
         Related Products
       </h2>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
 
-        {/* Dummy placeholders (you can replace with API later) */}
+       
         {[1, 2, 3, 4, 5].map((item) => (
           <div
             key={item}

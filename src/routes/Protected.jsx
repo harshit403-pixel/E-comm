@@ -8,7 +8,6 @@ const Protected = () => {
   const { loggedInUser } = useContext(Auth);
 
   if (!loggedInUser) {
-    toast.error("Unauthorized user");
     return <Navigate to="/auth" replace />;
   }
 
