@@ -1,10 +1,14 @@
 import { Link, NavLink } from "react-router";
 import { useContext, useEffect, useState } from "react";
 import { Auth } from "../context/AuthContext";
+import { useNavigate } from "react-router";
+
 
 const Navbar = ({ onCartClick }) => {
      const { loggedInUser } = useContext(Auth);
     const [scrolled, setScrolled] = useState(false);
+    const { logout } = useContext(Auth);
+    const navigate = useNavigate()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -90,7 +94,11 @@ const Navbar = ({ onCartClick }) => {
           {/* Logout */}
 
 <NavLink
-  to="/auth"
+onClick={() => {
+    logout();           
+    navigate("/auth");   
+  }}
+ 
   className="p-2.5 cursor-pointer hover:bg-red-500/20 hover:border-red-500/30 border border-white/10 rounded-xl transition-all text-white/60 hover:text-red-400 flex items-center justify-center"
 >
   <svg

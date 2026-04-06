@@ -32,9 +32,10 @@ const ShopFilters = ({
           onChange={(e) => setCategory(e.target.value)}
         >
           <option value="all">All Categories</option>
-          <option value="electronics">Electronics</option>
-          <option value="clothing">Clothing</option>
+          <option value="fragrances">Fragrances</option>
+          <option value="groceries">Groceries</option>
           <option value="furniture">Furniture</option>
+          <option value="beauty">Beauty</option>
         </select>
 
         {/* Sorting */}

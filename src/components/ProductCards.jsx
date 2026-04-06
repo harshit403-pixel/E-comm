@@ -10,7 +10,7 @@ const ProductCard = ({ product }) => {
       {/* Image */}
       <div className="relative aspect-square bg-white overflow-hidden">
         <img
-          src={product.image}
+          src={product.images[0]}
           alt={product.title}
           className="w-full h-full object-contain p-6 group-hover:scale-110 transition-transform duration-500 hover:shadow-2xl-[#c8f400] rounded-xl"
         />
@@ -35,7 +35,7 @@ const ProductCard = ({ product }) => {
 
         {/* Rating */}
         <div className="flex items-center gap-1 text-[10px] text-white/40">
-          ⭐ {product.rating} ({product.reviews})
+          ⭐ {product.rating} 
         </div>
 
         {/* Bottom */}

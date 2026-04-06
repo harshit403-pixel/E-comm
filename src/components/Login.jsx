@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useContext } from "react";
 import { Auth } from "../context/AuthContext";
 import { useNavigate } from "react-router";
+import { toast } from "react-toastify";
 
 const Login = () => {
     let navigate = useNavigate();
@@ -26,16 +27,17 @@ const onSubmit = (data) => {
   );
 
   if (!user) {
-    alert("User does not exist");
+    toast.error("Invalid email or password");
     return;
   }
 
-  // ✅ login success
+
   setLoggedInUser(user);
   localStorage.setItem("log user", JSON.stringify(user));
 
-  // ✅ REDIRECT
-  navigate("/");   // 🔥 use your actual route
+
+  navigate("/");  
+  toast.success("Logged in successfully"); 
 };
 
   return (

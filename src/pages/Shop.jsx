@@ -1,35 +1,37 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCards";
 import ShopFilters from "../components/ShopFilters";
+import axios from "axios";
+import { set } from "react-hook-form";
 
-const dummyProducts = [
-  {
-    id: 1,
-    title: "Wireless Headphones",
-    category: "electronics",
-    price: 99,
-    rating: 4.5,
-    reviews: 120,
-    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400",
-  },
-  {
-    id: 2,
-    title: "T-Shirt",
-    category: "clothing",
-    price: 25,
-    rating: 4.2,
-    reviews: 80,
-    image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400",
-  },
-];
 
 const Shop = () => {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("all");
   const [sort, setSort] = useState("default");
+  const [filter, setFilter] = useState([])
 
-  // 🔥 Simple logic (runs every render — fine for now)
-  let filteredProducts = [...dummyProducts];
+  
+  let fetchProducts = async ()=>{
+    try {
+        let res = await axios.get ("https://dummyjson.com/products")
+        res = res.data.products
+        setFilter(res)
+        
+    } catch (error) {
+            console.log(error)
+    }
+  }
+  useEffect (()=>{
+    fetchProducts()
+  },[])
+
+  console.log(filter)
+
+ let filteredProducts = [...filter];
+
+ 
+
 
   // Search
   if (search) {

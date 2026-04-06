@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useContext } from "react";
 import { Auth } from "../context/AuthContext";
 import { useNavigate } from "react-router";
+import { toast } from "react-toastify";
 
 const Signup = () => {
     const navigate = useNavigate();
@@ -24,22 +25,21 @@ const onSubmit = (data) => {
   );
 
   if (userExists) {
-    alert("User already exists");
+   toast.error("User already exists");
+    navigate("/auth");
     return;
   }
 
   const updatedUsers = [...registeredUsers, data];
 
-  // save users
   setRegisteredUsers(updatedUsers);
   localStorage.setItem("reg users", JSON.stringify(updatedUsers));
 
-  // ✅ AUTO LOGIN
   setLoggedInUser(data);
   localStorage.setItem("log user", JSON.stringify(data));
 
-  // ✅ REDIRECT TO HOME
   navigate("/");
+    toast.success("Registered and logged in successfully");
 };
   const password = watch("password");
 
