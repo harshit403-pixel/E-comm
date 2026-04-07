@@ -19,7 +19,7 @@ const CartSidebar = ({ isOpen, onClose }) => {
         </button>
       </div>
 
-      {/* Content */}
+    
       <div className="flex-1 flex items-center justify-center text-center">
         <div>
            

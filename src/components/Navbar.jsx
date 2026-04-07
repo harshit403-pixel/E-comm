@@ -27,7 +27,7 @@ const Navbar = ({ onCartClick }) => {
   }, []);
 
   return (
-    <header className={`sticky   w-full top-0 z-30 transition-all duration-300 bg-transparent backdrop-blur-sm border-b  ${scrolled ? "border-white" : "border-white/10 "}`}>
+    <header className={`sticky    w-full top-0 z-30 transition-all duration-300 bg-black/40 backdrop-blur-sm border-b  ${scrolled ? "border-white" : "border-white/10 "}`}>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-6">
 
@@ -42,7 +42,7 @@ const Navbar = ({ onCartClick }) => {
         </Link>
 
         {/* Nav Links */}
-        <nav className="hidden font-semibold text-sm  text-white/50 md:flex items-center gap-6">
+        <nav className="hidden font-semibold text-sm  text-white/60 md:flex items-center gap-6">
           <NavLink
             to="/"
             className={({ isActive }) =>

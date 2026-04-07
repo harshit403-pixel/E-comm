@@ -3,6 +3,7 @@ import ProductCard from "../components/ProductCards";
 import ShopFilters from "../components/ShopFilters";
 import axios from "axios";
 import { set } from "react-hook-form";
+import Footer from "../components/Footer";
 
 
 const Shop = () => {
@@ -57,7 +58,8 @@ const Shop = () => {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
+  <div>
+      <div className="max-w-7xl mx-auto px-4 py-8">
 
       {/* Header */}
       <div className="mb-8">
@@ -85,6 +87,8 @@ const Shop = () => {
       </div>
 
     </div>
+    <Footer />
+  </div>
   );
 };
 

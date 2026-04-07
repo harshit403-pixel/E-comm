@@ -43,7 +43,7 @@ const onSubmit = (data) => {
   return (
     <div className="min-h-screen bg-[#0d0d0d] flex">
 
-      {/* LEFT SIDE (hidden on mobile) */}
+
       <div className="hidden lg:flex flex-col w-1/2 bg-[#111] border-r border-white/10 p-12 relative">
 
         <div className="flex items-center gap-3">
@@ -76,7 +76,7 @@ const onSubmit = (data) => {
 
         <div className="w-full max-w-md">
 
-          {/* Logo (mobile) */}
+          
           <div className="lg:hidden flex items-center gap-2 mb-8 justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currectColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-zap text-ink fill-ink"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path></svg>
             <span className="font-short text-white font-bold">
@@ -112,7 +112,7 @@ const onSubmit = (data) => {
                 </p>
               </div>
 
-              {/* Password */}
+              
               <div className="relative">
                 <input
                   type={showPassword ? "text" : "password"}
