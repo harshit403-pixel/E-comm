@@ -39,6 +39,29 @@ export const CartProvider = ({ children }) => {
     setCartItems([]);
     localStorage.removeItem("cart");
   };
+  const increaseQty = (id) => {
+  const updated = cartItems.map((item) =>
+    item.id === id
+      ? { ...item, quantity: item.quantity + 1 }
+      : item
+  );
+
+  setCartItems(updated);
+  localStorage.setItem("cart", JSON.stringify(updated));
+};
+
+const decreaseQty = (id) => {
+  let updated = cartItems.map((item) =>
+    item.id === id
+      ? { ...item, quantity: item.quantity - 1 }
+      : item
+  );
+
+  updated = updated.filter((item) => item.quantity > 0);
+
+  setCartItems(updated);
+  localStorage.setItem("cart", JSON.stringify(updated));
+};
 
   return (
     <Cart.Provider
@@ -47,6 +70,8 @@ export const CartProvider = ({ children }) => {
         addToCart,
         removeFromCart,
         clearCart,
+            increaseQty,  
+    decreaseQty,
       }}
     >
       {children}
