@@ -1,8 +1,10 @@
 import { useParams, NavLink } from "react-router";
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import { useContext } from "react";
+import { Cart } from "../context/CartContext";
 const ProductDetails = () => {
+    const { addToCart } = useContext(Cart);
   const { id } = useParams();
 
   const [product, setProduct] = useState(null);
@@ -108,7 +110,9 @@ const ProductDetails = () => {
 
           {/* BUTTONS */}
           <div className="flex gap-3">
-            <button className="flex-1 bg-[#c8f400] text-black py-3 rounded-2xl font-bold hover:opacity-90">
+            <button
+             onClick={() => addToCart(product)}
+            className="flex-1 bg-[#c8f400] text-black py-3 rounded-2xl font-bold hover:opacity-90">
               Add to Cart
             </button>
 

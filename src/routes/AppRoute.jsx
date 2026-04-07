@@ -8,6 +8,7 @@ import AuthLayout from "../layout/AuthLayout";
 import Register from "../components/Register";
 import Login from "../components/Login";
 import Protected from "./Protected";
+import CartSidebar from "../components/CartSidebar";
 
 const AppRoute = () => {
     const router = createBrowserRouter([
@@ -22,7 +23,8 @@ const AppRoute = () => {
                         { path: "", element: <Home /> },
                         { path: "shop", element: <Shop /> },
                         { path: "about", element: <About /> },
-                        { path: "products/:id", element: <ProductDetails /> }
+                        { path: "products/:id", element: <ProductDetails /> },
+                      
                     ]
                 }
             ]

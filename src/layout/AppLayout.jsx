@@ -27,7 +27,7 @@ const AppLayout = () => {
       />
 
       {/* Pages */}
-      <Outlet />
+      <Outlet onCartClick={() => setCartOpen(true)}  />
 
     </div>
   )

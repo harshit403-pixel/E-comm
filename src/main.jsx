@@ -5,12 +5,15 @@ import AppRoute from './routes/AppRoute.jsx'
 import { AuthProvider } from './context/AuthContext.jsx'
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { CartProvider } from './context/CartContext.jsx'
 
 createRoot(document.getElementById('root')).render(
   
       <AuthProvider>
+        <CartProvider>
     <AppRoute />
     <ToastContainer position="bottom-right" autoClose={5000} />
+    </CartProvider> 
   </AuthProvider>
   
 )

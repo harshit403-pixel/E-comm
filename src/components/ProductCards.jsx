@@ -1,15 +1,20 @@
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product,onCartClick }) => {
+  let navigate = useNavigate();
+
   return (
+
+
     <NavLink
-      to={`/products/${product.id}`}
+      
       className="flex flex-col group bg-[#111] border border-white/10 rounded-2xl overflow-hidden hover:-translate-y-[2px] transition-all duration-300"
     >
       
       {/* Image */}
       <div className="relative aspect-square bg-white overflow-hidden">
         <img
+          onClick={()=> navigate(`/products/${product.id}`)}
           src={product.images[0]}
           alt={product.title}
           className="w-full h-full object-contain p-6 group-hover:scale-110 transition-transform duration-500 hover:shadow-2xl-[#c8f400] rounded-xl"
@@ -44,7 +49,9 @@ const ProductCard = ({ product }) => {
             ${product.price}
           </span>
 
-          <button className="flex items-center gap-1 px-3 py-1.5 rounded-xl text-xs font-semibold bg-[#c8f400] text-black hover:bg-[#dfff4f] transition-all">
+          <button
+          onClick={console.log("Asdad")}
+          className="flex items-center cursor-pointer gap-1 px-3 py-1.5 rounded-xl text-xs font-semibold bg-[#c8f400] text-black hover:bg-[#dfff4f] transition-all">
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path></svg> Add
           </button>
         </div>
